@@ -1,0 +1,15 @@
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.csproj.AssemblyReference.cache
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.AssemblyInfoInputs.cache
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.AssemblyInfo.cs
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.csproj.CoreCompileInputs.cache
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/invoiceSystemApp
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/invoiceSystemApp.deps.json
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/invoiceSystemApp.runtimeconfig.json
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/invoiceSystemApp.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/invoiceSystemApp.pdb
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/refint/invoiceSystemApp.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.pdb
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.genruntimeconfig.cache
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/ref/invoiceSystemApp.dll
