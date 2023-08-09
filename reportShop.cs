@@ -5,6 +5,7 @@ namespace invoiceSystemApp
 	{
 		public reportShop()
 		{
+
 		}
 	}
 }

@@ -7,8 +7,8 @@ class Program
         ShopSetting shopSetting = new ShopSetting();
         ShopManager shopManager = new ShopManager();
         invoice invoice = new invoice();
-
-        while (true)
+       
+            while (true)
         {
             Console.WriteLine("---- Welcome to the continental ----");
             Console.WriteLine("\n1. Shop Setting");
@@ -38,10 +38,17 @@ class Program
                     invoice.SearchInvoice();
                     break;
                 case 6:
-                    Console.WriteLine("\nThank you and take care...");
-                    return;
-                default:
-                    Console.WriteLine("ERROR: Invalid choice. Please select a valid option.");
+                    Console.WriteLine("Are you sure you want to exit? (Y/N)");
+                    string choicee = Console.ReadLine().ToUpper();
+                    if(choicee.Equals("Y", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Environment.Exit(0);
+                        Console.WriteLine("\nThank you and take care...");
+                    }
+                    else
+                    {
+                        Main(args);
+                    }
                     break;
             }
         }
