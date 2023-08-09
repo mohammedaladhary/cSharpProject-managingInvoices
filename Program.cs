@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using static ShopSetting;
+using invoiceSystemApp;
+using Newtonsoft.Json;
+using static invoiceSystemApp.ShopSetting;
 
 namespace invoiceSystemApp;
 class Program
@@ -9,10 +11,10 @@ class Program
     {
         ShopSetting shopSetting = new ShopSetting();
         ShopManager shopManager = new ShopManager();
-        Invoice invoice = new Invoice();
         InvoiceManager invoiceManager = new InvoiceManager();
-       
-            while (true)
+        ReportGenerator reportGenerator = new ReportGenerator(invoiceManager.GetInvoices());
+
+        while (true)
         {
             Console.WriteLine("---- Welcome to the continental ----");
             Console.WriteLine("\n1. Shop Setting");
@@ -37,6 +39,7 @@ class Program
                     break;
                 case 4:
                     // Implement Generate Reports logic
+                    reportGenerator.StartMenu();
                     break;
                 case 5:
                     invoiceManager.SearchInvoice();

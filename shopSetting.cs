@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using invoiceSystemApp;
 using Newtonsoft.Json;
+namespace invoiceSystemApp;
 
 
 internal class ShopSetting
@@ -56,26 +57,6 @@ internal class ShopSetting
         Console.Write("\nEnter your choice: ");
         return int.Parse(Console.ReadLine());
     }
-
-    //private void LoadData()
-    //{
-    //    // Simulate loading data
-    //    items = new List<Item>
-    //    {
-    //        new Item { Name = "Rice", Price = 10.99M },
-    //        new Item { Name = "Milk", Price = 15.75M },
-    //        // Add more items
-    //    };
-
-    //    invoices = new List<Invoice>
-    //    {
-    //        new Invoice { CustomerName = "Mohammed", TotalAmount = 26.74M },
-    //        new Invoice { CustomerName = "Ahmed", TotalAmount = 42.50M },
-    //        // Add more invoices
-    //    };
-
-    //    Console.WriteLine("Data loaded successfully.");
-    //}
     private void LoadData()
     {
         try
@@ -125,7 +106,10 @@ internal class ShopSetting
         {
             invoices = new List<Invoice>();
         }
-
+        public List<Invoice> GetInvoices()
+        {
+            return invoices;
+        }
         public void CreateInvoice()
         {
             Console.Write("Enter customer name: ");
@@ -200,3 +184,24 @@ internal class InvoiceItem
     public decimal UnitPrice { get; set; }
     public decimal TotalPrice => Quantity * UnitPrice;
 }
+
+
+//private void LoadData()
+//{
+//    // Simulate loading data
+//    items = new List<Item>
+//    {
+//        new Item { Name = "Rice", Price = 10.99M },
+//        new Item { Name = "Milk", Price = 15.75M },
+//        // Add more items
+//    };
+
+//    invoices = new List<Invoice>
+//    {
+//        new Invoice { CustomerName = "Mohammed", TotalAmount = 26.74M },
+//        new Invoice { CustomerName = "Ahmed", TotalAmount = 42.50M },
+//        // Add more invoices
+//    };
+
+//    Console.WriteLine("Data loaded successfully.");
+//}
