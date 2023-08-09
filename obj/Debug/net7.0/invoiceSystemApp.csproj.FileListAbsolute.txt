@@ -13,3 +13,5 @@
 /Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.pdb
 /Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.genruntimeconfig.cache
 /Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/ref/invoiceSystemApp.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.csproj.CopyComplete

@@ -1,12 +1,16 @@
-﻿namespace invoiceSystemApp;
+﻿using System;
+using System.Collections.Generic;
+using static ShopSetting;
 
+namespace invoiceSystemApp;
 class Program
 {
     static void Main(string[] args)
     {
         ShopSetting shopSetting = new ShopSetting();
         ShopManager shopManager = new ShopManager();
-        invoice invoice = new invoice();
+        Invoice invoice = new Invoice();
+        InvoiceManager invoiceManager = new InvoiceManager();
        
             while (true)
         {
@@ -29,13 +33,13 @@ class Program
                     shopManager.StartMenu();
                     break;
                 case 3:
-                    invoice.CreateInvoice();
+                    invoiceManager.CreateInvoice();
                     break;
                 case 4:
                     // Implement Generate Reports logic
                     break;
                 case 5:
-                    invoice.SearchInvoice();
+                    invoiceManager.SearchInvoice();
                     break;
                 case 6:
                     Console.WriteLine("Are you sure you want to exit? (Y/N)");

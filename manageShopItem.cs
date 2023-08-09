@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+namespace invoiceSystemApp;
 
 internal class ShopManager
 {
