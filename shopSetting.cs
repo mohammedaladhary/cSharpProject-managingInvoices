@@ -142,6 +142,26 @@ internal class ShopSetting
             SaveInvoicesToJson();
         }
 
+        public void SearchInvoice()
+        {
+            Console.Write("Enter customer name to search: ");
+            string searchName = Console.ReadLine();
+
+            var foundInvoices = invoices.FindAll(invoice => invoice.CustomerName.Contains(searchName));
+            if (foundInvoices.Count > 0)
+            {
+                Console.WriteLine("Found Invoices:");
+                foreach (var invoice in foundInvoices)
+                {
+                    Console.WriteLine($"Customer: {invoice.CustomerName}, Total Amount: {invoice.TotalAmount} RO");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No invoices found for the given customer name.");
+            }
+        }
+
         private void SaveInvoicesToJson()
         {
             string invoicesJson = JsonConvert.SerializeObject(invoices, Formatting.Indented);
