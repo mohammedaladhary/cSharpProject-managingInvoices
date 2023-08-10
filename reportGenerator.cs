@@ -59,19 +59,42 @@ namespace invoiceSystemApp
 
         public void ReportAllInvoices()
         {
-            Console.WriteLine("Report for All Invoices");
-            foreach (var invoice in invoices)
+            try
             {
-                Console.WriteLine($"Customer: {invoice.CustomerName}, Total Amount: {invoice.TotalAmount:C}");
-                Console.WriteLine("Items:");
-                foreach (var item in invoice.Items)
+                Console.WriteLine("Report for All Invoices");
+                foreach (var invoice in invoices)
                 {
-                    Console.WriteLine($"  - {item.ItemName}, Quantity: {item.Quantity}, Unit Price: {item.UnitPrice:C}, Total Price: {item.TotalPrice:C}");
+                    Console.WriteLine($"Customer: {invoice.CustomerName}, Total Amount: {invoice.TotalAmount:N2} OMR");
+                    Console.WriteLine("Items:");
+                    foreach (var item in invoice.Items)
+                    {
+                        Console.WriteLine($"  - {item.ItemName}, Quantity: {item.Quantity}, Unit Price: {item.UnitPrice:N2} OMR, Total Price: {item.TotalPrice:N2} OMR");
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
+            }
+            catch
+            {
+                // Ignore any exceptions that occur during the execution of the method
+                Console.WriteLine("ERROR: Some Error Occurred");
             }
         }
     }
 
 }
 
+
+//public void ReportAllInvoices()
+//{
+//    Console.WriteLine("Report for All Invoices");
+//    foreach (var invoice in invoices)
+//    {
+//        Console.WriteLine($"Customer: {invoice.CustomerName}, Total Amount: {invoice.TotalAmount:C}");
+//        Console.WriteLine("Items:");
+//        foreach (var item in invoice.Items)
+//        {
+//            Console.WriteLine($"  - {item.ItemName}, Quantity: {item.Quantity}, Unit Price: {item.UnitPrice:C}, Total Price: {item.TotalPrice:C}");
+//        }
+//        Console.WriteLine();
+//    }
+//}

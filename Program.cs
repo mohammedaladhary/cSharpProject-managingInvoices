@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Intrinsics.X86;
+using System.Xml;
 using invoiceSystemApp;
 using Newtonsoft.Json;
+using static System.Formats.Asn1.AsnWriter;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static invoiceSystemApp.ShopSetting;
 
 namespace invoiceSystemApp;
@@ -60,7 +65,6 @@ class Program
             }
         }
     }
-
     private static int GetChoice()
     {
         Console.Write("\nEnter your choice: ");
@@ -68,3 +72,16 @@ class Program
     }
 }
 
+//the following was used in this consoleApp:
+
+//Lists(List<T>) : In this code, lists are used to store items in the shop inventory (List<Item>),
+//                               invoices (List<Invoice>),
+//                               and items within each invoice (List<InvoiceItem>).
+
+//Classes: In this code, classes such as Item, Invoice, InvoiceItem, ShopSetting, InvoiceHeader, and InvoiceManager
+//         are defined to encapsulate related data and functionality.
+
+//JSON Serialization: JSON (JavaScript Object Notation) is used to represent structured data in a human-readable format.
+//                    It's used for saving and loading data from files (items.json and invoices.json).
+
+//Exceptions and Error Handling: While not a traditional data structure, error handling mechanisms are used throughout the code.

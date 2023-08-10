@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using invoiceSystemApp;
+using System.Text.Json;
 using Newtonsoft.Json;
+
 namespace invoiceSystemApp;
 
 
@@ -26,24 +28,28 @@ internal class ShopSetting
     {
         while (true)
         {
-            Console.WriteLine("\n1. Load Data (Items and Invoices)");
-            Console.WriteLine("2. Set Shop Name");
-            Console.WriteLine("3. Set Invoice Header");
-            Console.WriteLine("4. Go Back");
+            Console.WriteLine("\n1. Load Data Items");
+            Console.WriteLine("2. Load Data Invoices");
+            Console.WriteLine("3. Set Shop Name");
+            Console.WriteLine("4. Set Invoice Header");
+            Console.WriteLine("5. Go Back");
 
             int choice = GetChoice();
             switch (choice)
             {
                 case 1:
-                    LoadData();
+                    LoadItems(ref items);
                     break;
                 case 2:
-                    SetShopName();
+                    LoadInvoices(ref invoices);
                     break;
                 case 3:
-                    SetInvoiceHeader();
+                    SetShopName();
                     break;
                 case 4:
+                    SetInvoiceHeader();
+                    break;
+                case 5:
                     return; // Go back
                 default:
                     Console.WriteLine("Invalid choice. Please select a valid option.");
@@ -57,22 +63,46 @@ internal class ShopSetting
         Console.Write("\nEnter your choice: ");
         return int.Parse(Console.ReadLine());
     }
-    private void LoadData()
+    public void LoadItems(ref List<Item> items)
     {
         try
         {
-            // Simulate loading data from JSON files
-            string itemsJson = System.IO.File.ReadAllText("items.json");
-            items = JsonConvert.DeserializeObject<List<Item>>(itemsJson);
-
-            string invoicesJson = System.IO.File.ReadAllText("invoices.json");
-            invoices = JsonConvert.DeserializeObject<List<Invoice>>(invoicesJson);
-
-            Console.WriteLine("Data loaded successfully.");
+                if (File.Exists("shop Setting/items.json"))
+                {
+                    string json = File.ReadAllText("Shop Setting/items.json");
+                    items = System.Text.Json.JsonSerializer.Deserialize<List<Item>>(json);
+                    Console.WriteLine("Data loaded successfully.");
+                }
+                else
+                {
+                    items = new List<Item>();
+                }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"An error occurred while loading data: {ex.Message}");
+            Console.WriteLine($"Error loading items data: {ex.Message}");
+            items = new List<Item>();
+        }
+    }
+    public void LoadInvoices(ref List<Invoice> invoices)
+    {
+        try
+        {
+                if (File.Exists("shop Setting/invoices.json"))
+                {
+                    string json = File.ReadAllText("Shop Setting/invoices.json");
+                    invoices = System.Text.Json.JsonSerializer.Deserialize<List<Invoice>>(json);
+                    Console.WriteLine("Data loaded successfully.");
+                }
+                else
+                {
+                    invoices = new List<Invoice>();
+                }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading invoices data: {ex.Message}");
+            invoices = new List<Invoice>();
         }
     }
 
@@ -124,6 +154,7 @@ internal class ShopSetting
 
             // Save invoices to JSON file
             SaveInvoicesToJson();
+            
         }
 
         public void SearchInvoice()
@@ -148,9 +179,10 @@ internal class ShopSetting
 
         private void SaveInvoicesToJson()
         {
-            string invoicesJson = JsonConvert.SerializeObject(invoices, Formatting.Indented);
+            string invoicesJson = Newtonsoft.Json.JsonConvert.SerializeObject(invoices, Formatting.Indented);
             System.IO.File.WriteAllText("invoices.json", invoicesJson);
         }
+
     }
 }
 
@@ -204,4 +236,23 @@ internal class InvoiceItem
 //    };
 
 //    Console.WriteLine("Data loaded successfully.");
+//}
+
+//private void LoadData()
+//{
+//    //try
+//    //{
+//    //    // Simulate loading data from JSON files
+//    //    string itemsJson = System.IO.File.ReadAllText("items.json");
+//    //    items = JsonConvert.DeserializeObject<List<Item>>(itemsJson);
+
+//    //    string invoicesJson = System.IO.File.ReadAllText("invoices.json");
+//    //    invoices = JsonConvert.DeserializeObject<List<Invoice>>(invoicesJson);
+
+//    //    Console.WriteLine("Data loaded successfully.");
+//    //}
+//    //catch (Exception ex)
+//    //{
+//    //    Console.WriteLine($"An error occurred while loading data: {ex.Message}");
+//    //}
 //}

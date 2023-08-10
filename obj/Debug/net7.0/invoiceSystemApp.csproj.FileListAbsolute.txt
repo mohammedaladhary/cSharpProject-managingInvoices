@@ -15,3 +15,7 @@
 /Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/ref/invoiceSystemApp.dll
 /Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Users/mohammedaladhary/Projects/invoiceSystemApp/obj/Debug/net7.0/invoiceSystemApp.csproj.CopyComplete
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/PdfSharp.Charting.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/PdfSharp.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/de/PdfSharp.Charting.resources.dll
+/Users/mohammedaladhary/Projects/invoiceSystemApp/bin/Debug/net7.0/de/PdfSharp.resources.dll
